@@ -19,7 +19,7 @@ class _MyHomePageDetailState extends State<MyHomePageDetail> {
         slivers: <Widget>[
           SliverAppBar(
             pinned: true,
-            expandedHeight: 200.0,
+            expandedHeight: 240.0,
             floating: false,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(_title),
@@ -27,7 +27,15 @@ class _MyHomePageDetailState extends State<MyHomePageDetail> {
                 color: Colors.green,
               ),
             ),
-          )
+          ),
+          SliverList(delegate: SliverChildBuilderDelegate((context, index) {
+            return Card(
+              child: ListTile(
+                title: Text("List: $index"),
+                leading: Icon(Icons.person),
+              ),
+            );
+          }, childCount: 100)),
         ],
       )
     );
