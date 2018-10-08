@@ -14,14 +14,22 @@ class _MyHomePageDetailState extends State<MyHomePageDetail> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Material App'),
-      ),
-      body: new Center(
-        child: Text("$_title"),
-      ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            pinned: true,
+            expandedHeight: 200.0,
+            floating: false,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(_title),
+              background: Container(
+                color: Colors.green,
+              ),
+            ),
+          )
+        ],
+      )
     );
   }
 }
